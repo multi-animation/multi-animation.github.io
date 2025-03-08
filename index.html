@@ -92,6 +92,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">Towards Multiple Character Image Animation Through Enhancing Implicit Decoupling</h1>
+            <div class="has-text-centered is-size-6" style="margin: 0.25rem 0;">ICLR25</div>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -142,7 +143,7 @@
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <sup>1</sup>Sun Yat-sen University,&nbsp;&nbsp;&nbsp;
-                <sup>2</sup>Tencent, Hunyuan,&nbsp;&nbsp;&nbsp;
+                <sup>2</sup>Tencent Hunyuan,&nbsp;&nbsp;&nbsp;
                 <sup>3</sup>Tsinghua Univerisity,&nbsp;&nbsp;&nbsp;
                 <sup>4</sup>HKUST</span>,
                 <br><sup>5</sup>Harbin Institute of Technology (Shenzhen)</span>
@@ -177,19 +178,19 @@
                 </span>
 
                 <!-- Supplementary PDF link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM112 256H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 384 512"><path fill="#ffffff" d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM112 256H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
                   </span>
                   <span>Supplementary</span>
                   </a>
-                </span>
+                </span> -->
 
                 <!-- Video Link. -->
                 <span class="link-block">
-                  <a href="https://youtu.be/Ok3NS7hpaRc?si=w6OZwzuA22cd3FW4"
+                  <a href="https://youtu.be/GSvxdBnoOVs?si=yz_7-R0ET0YYs19x"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="fab fa-youtube"></i>
@@ -347,7 +348,11 @@
       <!-- Your image here -->
       <img src="static/images/net_demo.png" alt="MY ALT TEXT"/>
       <h2 class="content has-text-justified">
-        The overview of our method. The left half illustrates the data flow of the multiple condition guiders, with green and black arrows denoting training data flow, and red and black arrows indicating inference data flow. After processing the pose sequence/training video and reference images through the corresponding data flow, three condition maps are obtained. The pose sequence and three condition maps are incorporated into the initial multi-frame noise after being encoded separately by "Ref_Pose Guider", "Depth Guider", "Pose_Seq Guider", and "Optical Flow Guider" respectively. The right half shows the denoising U-Net and ReferenceNet. The initial noise is fed into U-Net for denoising to generate videos. After being encoded by VAE encoder, reference image is input into ReferenceNet to extract character features and then fed into the Spatial-Attention of U-Net for interaction. Furthermore, reference image is encoded by CLIP image encoder and then input into the Cross-Attention of U-Net and ReferenceNet for interaction. Note that the weights of U-Net and ReferenceNet are trainable, while the weights of both encoders are frozen.
+        The overview of our method. The left half illustrates the data flow of the multiple condition guiders, with green and black arrows denoting training data flow, and red and black arrows indicating inference data flow. 
+        After processing the pose sequence/training video and reference images through the corresponding data flow, three condition maps are obtained. 
+        The pose sequence and three condition maps are incorporated into the initial multi-frame noise after being encoded separately by "Ref Pose Guider", "Depth Order Guider", "Pose Seq Guider", and "Optical Flow Guider" respectively. 
+        The right half shows the denoising U-Net and ReferenceNet. The initial noise is fed into U-Net for denoising to generate videos. After being encoded by VAE encoder, reference image is input into ReferenceNet to extract character features and then fed into the Spatial-Attention of U-Net for interaction. 
+        Furthermore, reference image is encoded by CLIP image encoder and then input into the Cross-Attention of U-Net and ReferenceNet for interaction. Note that the weights of U-Net and ReferenceNet are trainable, while the weights of both encoders are frozen.
       </h2>
 
     </div>
@@ -363,15 +368,9 @@
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
-          <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
-            <source src="static/videos/supplementary_material.mp4"
-            type="video/mp4">
-          </video> -->
-
           <!-- Youtube embed code here -->
           <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/Ok3NS7hpaRc?si=MkiXEx_49-3It2Ii" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/GSvxdBnoOVs?si=zrolB2pfK66jTRAc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
 
         </div>
@@ -412,12 +411,6 @@
         </div>
         <div class="item">
           <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/single/32.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
             <source src="./static/videos/single/33.mp4"
                     type="video/mp4">
           </video>
@@ -430,19 +423,7 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
           <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/multiple/31.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
             <source src="./static/videos/multiple/32.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/multiple/33.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -464,16 +445,45 @@
                     type="video/mp4">
           </video>
         </div>
-
       </div>
       <!-- End Second carousel -->
 
       <!-- The Third carousel -->
+      <h2 class="title is-4"  style="margin-top: 40px;">Different Pose.</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" controls muted loop playsinline height="100%">
+            <source src="./static/videos/difpose/1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" controls muted loop playsinline height="100%">
+            <source src="./static/videos/difpose/2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" controls muted loop playsinline height="100%">
+            <source src="./static/videos/difpose/3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" controls muted loop playsinline height="100%">
+            <source src="./static/videos/difpose/4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!-- End Third carousel -->
+
+      <!-- The 4th carousel -->
       <h2 class="title is-4"  style="margin-top: 40px;">Various Clothes.</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
           <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/clothes/1.mp4"
+            <source src="./static/videos/clothes/9.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -497,12 +507,6 @@
         </div>
         <div class="item">
           <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/clothes/5.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
             <source src="./static/videos/clothes/6.mp4"
                     type="video/mp4">
           </video>
@@ -513,23 +517,10 @@
                     type="video/mp4">
           </video>
         </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/clothes/8.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/clothes/9.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
       </div>
-      <!-- End Third carousel -->
+      <!-- End 4th carousel -->
 
-      <!-- The 4th carousel -->
+      <!-- The 5th carousel -->
       <h2 class="title is-4"  style="margin-top: 40px;">Various Age.</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
@@ -546,13 +537,7 @@
         </div>
         <div class="item">
           <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/age/3.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/age/4.mp4"
+            <source src="./static/videos/age/8.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -568,40 +553,21 @@
                     type="video/mp4">
           </video>
         </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/age/7.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/age/8.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
       </div>
-      <!-- End 4th carousel -->
+      <!-- End 5th carousel -->
 
-      <!-- The 5th carousel -->
+      <!-- The 6th carousel -->
       <h2 class="title is-4"  style="margin-top: 40px;">Various Ethnicity.</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
           <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/ethnicity/1.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/ethnicity/2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
             <source src="./static/videos/ethnicity/3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" controls muted loop playsinline height="100%">
+            <source src="./static/videos/ethnicity/8.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -623,23 +589,10 @@
                     type="video/mp4">
           </video>
         </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/ethnicity/7.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/ethnicity/8.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
       </div>
-      <!-- End 5th carousel -->
+      <!-- End 6th carousel -->
 
-      <!-- The 6th carousel -->
+      <!-- The 7th carousel -->
       <h2 class="title is-4"  style="margin-top: 40px;">Complex background.</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
@@ -662,19 +615,7 @@
         </div>
         <div class="item">
           <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/background/4.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
             <source src="./static/videos/background/5.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop playsinline height="100%">
-            <source src="./static/videos/background/6.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -686,7 +627,7 @@
         </div>
 
       </div>
-      <!-- End 6th carousel -->
+      <!-- End 7th carousel -->
 
     </div>
   </div>
@@ -714,12 +655,12 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{xue2024follow,
-  title={Follow-Your-Pose v2: Multiple-Condition Guided Character Image Animation for Stable Pose Control},
+    <pre><code>@inproceedings{xuetowards,
+  title={Towards Multiple Character Image Animation Through Enhancing Implicit Decoupling},
   author={Xue, Jingyun and Wang, Hongfa and Tian, Qi and Ma, Yue and Wang, Andong and Zhao, Zhiyuan and Min, Shaobo and Zhao, Wenzhe and Zhang, Kaihao and Shum, Heung-Yeung and others},
-  journal={arXiv preprint arXiv:2406.03035},
-  year={2024}
-}</code></pre>
+  booktitle={The Thirteenth International Conference on Learning Representations}
+}
+</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
